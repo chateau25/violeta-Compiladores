@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 
 WORKDIR /flex_lab
 
-COPY . .
+COPY --chown=1000:1000 . .
 
 RUN test -f /flex_lab/validator
 
