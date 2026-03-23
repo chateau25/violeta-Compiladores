@@ -1,16 +1,15 @@
 FROM alpine:latest
 
 RUN apk add --no-cache \
-	build-base \
-	flex \
-	cmake
+    build-base \
+    cmake
 
-WORKDIR /flex_lab
+WORKDIR /first_and_follow
 
-COPY --chown=1000:1000 . .
+COPY . .
 
-RUN test -f /flex_lab/validator
+RUN test -f /first_and_follow/validator
 
-RUN chmod +x /flex_lab/validator
+RUN chmod +x /first_and_follow/validator
 
-ENTRYPOINT ["/flex_lab/validator"]
+ENTRYPOINT ["/first_and_follow/validator"]
